@@ -111,7 +111,7 @@ public class FixedByteWidthRowColDataFileReader implements Closeable {
     final long totalSize = rowSize * rows;
     if (isMmap) {
       byteBuffer = file.getChannel()
-          .map(FileChannel.MapMode.READ_ONLY, 0, totalSize)
+          .map(FileChannel.MapMode.READ_ONLY, 0, totalSize).load()
           .order(ByteOrder.BIG_ENDIAN);
     } else {
       byteBuffer = ByteBuffer.allocateDirect((int) totalSize);

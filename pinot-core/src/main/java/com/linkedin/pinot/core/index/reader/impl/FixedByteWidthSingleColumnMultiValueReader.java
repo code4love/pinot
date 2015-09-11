@@ -92,7 +92,7 @@ public class FixedByteWidthSingleColumnMultiValueReader implements
     this.isMMap = isMMap;
     raf = new RandomAccessFile(file, "rw");
     if (isMMap) {
-      headerSectionByteBuffer = raf.getChannel().map(FileChannel.MapMode.READ_ONLY, 0, headerSize);
+      headerSectionByteBuffer = raf.getChannel().map(FileChannel.MapMode.READ_ONLY, 0, headerSize).load();
     } else {
       headerSectionByteBuffer = ByteBuffer.allocateDirect((int) headerSize);
       raf.getChannel().read(headerSectionByteBuffer);

@@ -48,7 +48,7 @@ import com.linkedin.pinot.transport.common.SegmentId;
 
 
 public class PinotClientRequestServlet extends HttpServlet {
-  private static final PQLCompiler requestCompiler = new PQLCompiler(new HashMap<>());
+  private static final PQLCompiler requestCompiler = new PQLCompiler(new HashMap<String, String[]>());
   private static final Pql2Compiler pql2Compiler = new Pql2Compiler();
 
   private static final long serialVersionUID = -3516093545255816357L;

@@ -165,6 +165,11 @@ public class LinkedListStarTreeTable implements StarTreeTable {
     final Iterator<ByteBuffer> itr = list.iterator();
     return new Iterator<StarTreeTableRow>() {
       @Override
+      public void remove(){
+        itr.remove();
+      }
+
+      @Override
       public boolean hasNext() {
         return itr.hasNext();
       }

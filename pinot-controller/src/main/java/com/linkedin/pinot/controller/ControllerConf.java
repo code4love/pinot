@@ -106,7 +106,7 @@ public class ControllerConf extends PropertiesConfiguration {
 
     // The set method converted comma separated string into ArrayList, so need to convert back to String here.
     if (zkAddressObj instanceof ArrayList) {
-      return String.join(",", (ArrayList) zkAddressObj);
+      return "," + (ArrayList) zkAddressObj;
     } else if (zkAddressObj instanceof String) {
       return (String) zkAddressObj;
     } else {

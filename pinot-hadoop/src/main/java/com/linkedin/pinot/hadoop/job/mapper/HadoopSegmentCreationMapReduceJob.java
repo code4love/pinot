@@ -169,7 +169,7 @@ public class HadoopSegmentCreationMapReduceJob {
       segmentGeneratorConfig.setRecordeReaderConfig(getReaderConfig(fileFormat));
       segmentGeneratorConfig.setIndexOutputDir(_localDiskSegmentDirectory);
       segmentGeneratorConfig.createInvertedIndexForAllColumns();
-      segmentGeneratorConfig.setCreateInvertedIndexForColumn("admckid", false);
+      segmentGeneratorConfig.setCreateInvertedIndexForColumn("cookie", false);
       SegmentIndexCreationDriverImpl driver = new SegmentIndexCreationDriverImpl();
       driver.init(segmentGeneratorConfig);
       driver.build();
